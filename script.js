@@ -38,7 +38,7 @@ function startGame() {
   score = 0;
   timeUp = false;
   peep();
-  setTimeout(() => (timeUp = true), 15000); // Game lasts for 15 seconds
+  setTimeout(() => (timeUp = true), 30000); // Game lasts for 30 seconds
 }
 
 function whack(e) {
