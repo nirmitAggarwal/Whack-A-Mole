@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('assets/background.png') no-repeat center center/cover;
+    color: white;
+    cursor: none; /* Hide default cursor on larger screens */
+}
+
+.container {
+    text-align: center;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.scoreboard {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mole-hole {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* This creates a 1:1 aspect ratio */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mole {
+    position: absolute;
+    bottom: -100%;
+    width: 80%; /* Adjusted width to fit the mole image */
+    left: 10%; /* Centering the mole image */
+    transition: bottom 0.3s;
+    cursor: pointer;
+}
+
+.mole.whacked {
+    bottom: -100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#hammer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    transform: rotate(0deg);
+    transition: transform 0.1s;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    body {
+        cursor: none; /* Hide default cursor on larger screens */
+    }
+    
+    #hammer {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    #hammer {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .scoreboard {
+        font-size: 1.5em;
+    }
+
+    .game-board {
+        gap: 20px;
+    }
+
+    .mole-hole {
+        width: calc(100px + 1vw);
+        height: calc(100px + 1vw);
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+    }
+
+    #hammer {
+        width: 70px;
+        height: 70px;
+    }
+}

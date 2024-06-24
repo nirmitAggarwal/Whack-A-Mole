@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Mole</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Whack a Mole</h1>
+        <div class="scoreboard">
+            <span>Score: </span><span id="score">0</span>
+        </div>
+        <div class="game-board">
+            <div class="mole-hole" id="hole1"><img src="assets/mole.png" class="mole" id="mole1"></div>
+            <div class="mole-hole" id="hole2"><img src="assets/mole.png" class="mole" id="mole2"></div>
+            <div class="mole-hole" id="hole3"><img src="assets/mole.png" class="mole" id="mole3"></div>
+            <div class="mole-hole" id="hole4"><img src="assets/mole.png" class="mole" id="mole4"></div>
+            <div class="mole-hole" id="hole5"><img src="assets/mole.png" class="mole" id="mole5"></div>
+            <div class="mole-hole" id="hole6"><img src="assets/mole.png" class="mole" id="mole6"></div>
+        </div>
+        <button id="startButton">Start Game</button>
+    </div>
+    <audio id="smashSound" src="assets/smash.mp3"></audio>
+    <img src="assets/hammer.png" id="hammer" class="hidden">
+    <script src="script.js"></script>
+</body>
+</html>
